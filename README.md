@@ -94,7 +94,7 @@ Level 1 • Next Reward:
 
     <p>🇭🇰 Yeh Yeh — 📖 Cantonese Word: 你好 (Hello)</p>
 
-</div>
+</section>
 
 <section class="card"> 
 
