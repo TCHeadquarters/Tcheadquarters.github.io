@@ -1,19 +1,3 @@
-/*
-======================================
-
-        🏡 TC Headquarters
-       Version 1.0 - Homecoming
-
-          🐸 Ribbit
-     Chief Happiness Officer
-
-          ⭐ Aster
-     Chief Ideas Officer
-
-======================================
-*/
-
-
 window.onload = function(){
 
 // =====================
