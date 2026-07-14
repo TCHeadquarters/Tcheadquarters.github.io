@@ -1,307 +1,217 @@
-window.onload = function(){
-
-// =====================
-// Welcome Achievement
-// =====================
-
-if(!localStorage.getItem("welcomeHome")){
-
-    localStorage.setItem(
-        "welcomeHome",
-        "Unlocked"
-    );
-
-    alert(
-    "🏆 Achievement Unlocked!\n\n🏡 Welcome Home"
-    );
-
-}
-
-
-// =====================
-// Greeting
-// =====================
-
-const greeting =
-document.getElementById("greeting");
-
-const today =
-document.getElementById("today");
-
-
-const now = new Date();
-
-const hour = now.getHours();
-
-
-if(hour < 12){
-
-    greeting.textContent =
-    "☀️ Good Morning, Ashley";
-
-}
-
-else if(hour < 17){
-
-    greeting.textContent =
-    "🌤️ Good Afternoon, Ashley";
-
-}
-
-else if(hour < 21){
-
-    greeting.textContent =
-    "🌙 Good Evening, Ashley";
-
-}
-
-else{
-
-    greeting.textContent =
-    "🏡 Welcome Home, Ashley";
-
-}
-
-
-today.textContent =
-now.toLocaleDateString(
-"en-US",
-{
-weekday:"long",
-month:"long",
-day:"numeric"
-}
-);
-
-
-// =====================
-// Spotlight
-// =====================
-
-const family = [
-
-"Ashley 💜",
-
-"Michael ❤️",
-
-"Alec ⭐",
-
-"Jace 🦖",
-
-"Mama 🌸",
-
-"Yeh Yeh 🇭🇰"
-
-];
-
-
-document.getElementById(
-"spotlight"
-).textContent =
-
-family[
-Math.floor(Math.random()*family.length)
-];
-
-
-// =====================
-// Daily Spark
-// =====================
-
-const sparks=[
-
-"💜 Tell someone why you appreciate them.",
-
-"🇭🇰 Learn one new Cantonese word.",
-
-🥤 "Drink some water.",
-
-"📸 Take a family picture.",
-
-"😂 Make someone laugh.",
-
-"🤗 Give someone a hug.",
-
-"🌸 Thank Mama today.",
-
-"🎵 Listen to a song together.",
-
-"⭐ Do something kind."
-
-];
-
-
-document.getElementById(
-"dailySpark"
-).textContent =
-
-sparks[
-Math.floor(Math.random()*sparks.length)
-];
-
-
-// =====================
-// Mission
-// =====================
-
-const missions=[
-
-"🍽️ Eat one meal together.",
-
-"🎲 Play a family game.",
-
-"🧹 Complete a chore together.",
-
-"📖 Read together.",
-
-🚶 "Take a walk together.",
-
-"💜 Say something nice to everyone."
-
-];
-
-
-document.getElementById(
-"mission"
-).textContent =
-
-missions[
-Math.floor(Math.random()*missions.length)
-];
+/* ==========================================
+   TC Headquarters
+   Version 1.0 - Homecoming
+   Build 001
+========================================== */
+
+window.onload = function () {
+
+    // Greeting
+    const greeting = document.getElementById("greeting");
+    const today = document.getElementById("today");
+
+    const now = new Date();
+    const hour = now.getHours();
+
+    if (hour < 12) {
+        greeting.textContent = "☀️ Good Morning, Ashley!";
+    } else if (hour < 17) {
+        greeting.textContent = "🌤️ Good Afternoon, Ashley!";
+    } else if (hour < 21) {
+        greeting.textContent = "🌙 Good Evening, Ashley!";
+    } else {
+        greeting.textContent = "🏡 Welcome Home, Ashley!";
+    }
+
+    today.textContent = now.toLocaleDateString("en-US", {
+        weekday: "long",
+        month: "long",
+        day: "numeric"
+    });
+
+    // Spotlight
+    const family = [
+        "Ashley 💜",
+        "Michael ❤️",
+        "Alec ⭐",
+        "Jace 🦖",
+        "Mama 🌸",
+        "Yeh Yeh 🇭🇰"
+    ];
+
+    document.getElementById("spotlight").textContent =
+        family[Math.floor(Math.random() * family.length)];
+
+    // Daily Mission
+    const missions = [
+        "🍽️ Eat one meal together.",
+        "🎲 Play a game together.",
+        "📖 Read together for 15 minutes.",
+        "🚶 Take a family walk.",
+        "😂 Make someone laugh.",
+        "📸 Take a family picture."
+    ];
+
+    document.getElementById("mission").textContent =
+        missions[Math.floor(Math.random() * missions.length)];
+
+    // Daily Spark
+    const sparks = [
+        "💜 Tell someone why you appreciate them.",
+        "🇭🇰 Learn one Cantonese word.",
+        "🥤 Drink a glass of water.",
+        "🌟 Do one unexpected act of kindness.",
+        "🤗 Give someone a hug."
+    ];
+
+    document.getElementById("dailySpark").textContent =
+        sparks[Math.floor(Math.random() * sparks.length)];
+
+    // Ribbit
+    setupRibbit();
+
+    // Aster
+    setupAster();
 
 };
 
+const ribbitMessages = [
 
-// =====================
-// Ribbit
-// =====================
+"🐸 Ribbit believes in Team Cheung!",
 
-const ribbitMessages=[
+"🐸 Every adventure starts at home.",
 
-"🐸 Welcome home, Team Cheung!",
+"🐸 Someone deserves a hug today.",
 
-"🐸 Ribbit believes today is an adventure!",
+"🐸 Pizza Night is getting closer!",
 
-"🐸 Did someone smile today?",
+"🐸 You're making wonderful memories.",
 
-"🐸 Teamwork makes everything easier!",
+"🐸 High fives earn invisible XP!",
 
-"🐸 Pizza Night sounds amazing!",
+"🐸 I checked the pond. Still wet.",
 
-"🐸 Every memory matters.",
-
-"🐸 Ribbit approves this mission!",
-
-"🐸 High five for Team Cheung!"
+"🐸 Today feels lucky."
 
 ];
 
+function setupRibbit(){
 
-document.getElementById(
-"frog"
-).onclick=function(){
-
+const frog =
+document.getElementById("frog");
 
 const message =
+document.getElementById("ribbitMessage");
 
-ribbitMessages[
-Math.floor(Math.random()*ribbitMessages.length)
-];
+frog.addEventListener("click",function(){
 
+frog.style.transform="scale(1.25)";
 
-document.getElementById(
-"ribbitMessage"
-).textContent =
-message;
+setTimeout(function(){
 
+frog.style.transform="scale(1)";
 
-};
+},200);
 
+const random =
+Math.floor(Math.random()*ribbitMessages.length);
 
-// =====================
-// Random Fun
-// =====================
+message.textContent =
+ribbitMessages[random];
+
+});
+
+}
 
 const funIdeas=[
 
-"🐧 Penguin walk!",
+"🐧 Everyone walks like penguins!",
 
-"🤣 Tell your funniest joke.",
+"🤣 Tell your worst joke.",
 
-🎵 "Dance party for 30 seconds!",
+"🎵 Dance for 30 seconds!",
 
-"📸 Silly family picture!",
+"🦘 Hop across the room!",
 
-"🇭🇰 Learn a Cantonese word!",
+"📸 Take the silliest selfie!",
 
 "⭐ Give someone a compliment."
 
 ];
 
-
 function randomFun(){
 
-const idea =
+const random=
+Math.floor(Math.random()*funIdeas.length);
 
-funIdeas[
-Math.floor(Math.random()*funIdeas.length)
+document.getElementById("challenge").textContent=
+funIdeas[random];
+
+document.getElementById("frog").textContent="🤩🐸";
+
+document.getElementById("ribbitMessage").textContent=
+"🐸 THAT sounds awesome!";
+
+}
+
+function openSection(section){
+
+if(section==="Team Wins"){
+
+alert("🏆 Team Wins\n\nComing in Version 1.1!");
+
+}
+
+else{
+
+alert("🚧 "+section+"\n\nComing Soon!");
+
+}
+
+}
+
+const asterQuotes=[
+
+"⭐ Hi Ashley! Need a brainstorm?",
+
+"⭐ Family first.",
+
+"⭐ You're doing an amazing job.",
+
+"⭐ Small steps build big dreams.",
+
+"⭐ Ribbit says hello!",
+
+"⭐ I'm here whenever you need ideas."
+
 ];
 
+function setupAster(){
 
-document.getElementById(
-"challenge"
-).textContent =
-idea;
+const star=
+document.getElementById("asterButton");
 
+const windowBox=
+document.getElementById("asterWindow");
+
+const close=
+document.getElementById("closeAster");
+
+star.addEventListener("click",function(){
+
+windowBox.style.display="block";
+
+const quote=
+asterQuotes[Math.floor(Math.random()*asterQuotes.length)];
+
+windowBox.querySelector("p").textContent=quote;
+
+});
+
+close.addEventListener("click",function(){
+
+windowBox.style.display="none";
+
+});
 
 }
-
-
-// =====================
-// Page Navigation
-// =====================
-
-function openSection(sectionName){
-
-alert(
-"🚧 "
-+
-sectionName
-+
-" is coming soon!"
-);
-
-}
-
-
-// =====================
-// ⭐ Aster
-// =====================
-
-
-const asterButton =
-document.getElementById(
-"asterButton"
-);
-
-
-const asterWindow =
-document.getElementById(
-"asterWindow"
-);
-
-
-asterButton.onclick=function(){
-
-asterWindow.style.display="block";
-
-};
-
-
-document.getElementById(
-"closeAster"
-).onclick=function(){
-
-asterWindow.style.display="none";
-
-};
