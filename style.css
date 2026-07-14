@@ -1,0 +1,296 @@
+/*
+======================================
+TC Headquarters
+Version 1.0 - Homecoming
+======================================
+*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#eef7ff;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    color:#333;
+
+    padding:20px;
+
+}
+
+.container{
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+header{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+h1{
+
+    color:#8a2be2;
+
+    margin-bottom:10px;
+
+}
+
+h2{
+
+    margin-bottom:8px;
+
+}
+
+.motto{
+
+    font-style:italic;
+
+    color:#666;
+
+    margin-top:10px;
+
+}
+
+.card,
+.xp-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    margin-bottom:18px;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+
+}
+
+.card h3,
+.xp-card h3{
+
+    margin-bottom:12px;
+
+}
+
+.card p{
+
+    margin:8px 0;
+
+}
+
+.xp-bar{
+
+    width:100%;
+
+    height:24px;
+
+    background:#ddd;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    margin:12px 0;
+
+}
+
+.xp-fill{
+
+    width:35%;
+
+    height:100%;
+
+    background:linear-gradient(
+        to right,
+        #7b2ff7,
+        #f107a3
+    );
+
+}
+
+.buttons{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:12px;
+
+    margin-bottom:20px;
+
+}
+
+button{
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:14px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    background:#8a2be2;
+
+    color:white;
+
+    transition:.25s;
+
+}
+
+button:hover{
+
+    transform:scale(1.03);
+
+    background:#7420d6;
+
+}
+
+.pond{
+
+    text-align:center;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    margin-bottom:20px;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+
+}
+
+#frog{
+
+    font-size:60px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#frog:hover{
+
+    transform:scale(1.15);
+
+}
+
+#ribbitMessage{
+
+    margin-top:15px;
+
+    font-weight:bold;
+
+}
+
+footer{
+
+    text-align:center;
+
+    color:#666;
+
+    margin-top:25px;
+
+    font-size:14px;
+
+}
+
+/* ⭐ Aster Button */
+
+#asterButton{
+
+    position:fixed;
+
+    bottom:20px;
+
+    right:20px;
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:gold;
+
+    color:black;
+
+    font-size:34px;
+
+    cursor:pointer;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+
+}
+
+#asterButton:hover{
+
+    transform:scale(1.1);
+
+}
+
+/* ⭐ Aster Window */
+
+#asterWindow{
+
+    position:fixed;
+
+    bottom:105px;
+
+    right:20px;
+
+    width:280px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    display:none;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+
+}
+
+#asterWindow h2{
+
+    color:#8a2be2;
+
+    margin-bottom:10px;
+
+}
+
+#asterWindow button{
+
+    width:100%;
+
+    margin-top:10px;
+
+}
+
+#closeAster{
+
+    background:#999;
+
+}
