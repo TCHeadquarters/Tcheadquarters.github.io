@@ -1,9 +1,3 @@
-/* ==========================================
-   TC Headquarters
-   Version 1.0 - Homecoming
-   Build 001
-========================================== */
-
 window.onload = function () {
 
     // Greeting
