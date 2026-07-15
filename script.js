@@ -1,217 +1,323 @@
-/* ==========================================
-   TC Headquarters
-   Version 1.0 - Homecoming
-   Build 001
-========================================== */
+/*
+======================================
 
-window.onload = function () {
+        🏡 TC Headquarters
+       Version 1.0 - Homecoming
 
-    // Greeting
-    const greeting = document.getElementById("greeting");
-    const today = document.getElementById("today");
+          🐸 Ribbit
+     Chief Happiness Officer
 
-    const now = new Date();
-    const hour = now.getHours();
+          ⭐ Aster
+     Chief Ideas Officer
 
-    if (hour < 12) {
-        greeting.textContent = "☀️ Good Morning, Ashley!";
-    } else if (hour < 17) {
-        greeting.textContent = "🌤️ Good Afternoon, Ashley!";
-    } else if (hour < 21) {
-        greeting.textContent = "🌙 Good Evening, Ashley!";
-    } else {
-        greeting.textContent = "🏡 Welcome Home, Ashley!";
-    }
+======================================
+*/
 
-    today.textContent = now.toLocaleDateString("en-US", {
-        weekday: "long",
-        month: "long",
-        day: "numeric"
-    });
 
-    // Spotlight
-    const family = [
-        "Ashley 💜",
-        "Michael ❤️",
-        "Alec ⭐",
-        "Jace 🦖",
-        "Mama 🌸",
-        "Yeh Yeh 🇭🇰"
-    ];
+window.onload = function(){
 
-    document.getElementById("spotlight").textContent =
-        family[Math.floor(Math.random() * family.length)];
+// =====================
+// Welcome Achievement
+// =====================
 
-    // Daily Mission
-    const missions = [
-        "🍽️ Eat one meal together.",
-        "🎲 Play a game together.",
-        "📖 Read together for 15 minutes.",
-        "🚶 Take a family walk.",
-        "😂 Make someone laugh.",
-        "📸 Take a family picture."
-    ];
+if(!localStorage.getItem("welcomeHome")){
 
-    document.getElementById("mission").textContent =
-        missions[Math.floor(Math.random() * missions.length)];
+    localStorage.setItem(
+        "welcomeHome",
+        "Unlocked"
+    );
 
-    // Daily Spark
-    const sparks = [
-        "💜 Tell someone why you appreciate them.",
-        "🇭🇰 Learn one Cantonese word.",
-        "🥤 Drink a glass of water.",
-        "🌟 Do one unexpected act of kindness.",
-        "🤗 Give someone a hug."
-    ];
-
-    document.getElementById("dailySpark").textContent =
-        sparks[Math.floor(Math.random() * sparks.length)];
-
-    // Ribbit
-    setupRibbit();
-
-    // Aster
-    setupAster();
-
-};
-
-const ribbitMessages = [
-
-"🐸 Ribbit believes in Team Cheung!",
-
-"🐸 Every adventure starts at home.",
-
-"🐸 Someone deserves a hug today.",
-
-"🐸 Pizza Night is getting closer!",
-
-"🐸 You're making wonderful memories.",
-
-"🐸 High fives earn invisible XP!",
-
-"🐸 I checked the pond. Still wet.",
-
-"🐸 Today feels lucky."
-
-];
-
-function setupRibbit(){
-
-const frog =
-document.getElementById("frog");
-
-const message =
-document.getElementById("ribbitMessage");
-
-frog.addEventListener("click",function(){
-
-frog.style.transform="scale(1.25)";
-
-setTimeout(function(){
-
-frog.style.transform="scale(1)";
-
-},200);
-
-const random =
-Math.floor(Math.random()*ribbitMessages.length);
-
-message.textContent =
-ribbitMessages[random];
-
-});
+    alert(
+    "🏆 Achievement Unlocked!\n\n🏡 Welcome Home"
+    );
 
 }
 
-const funIdeas=[
 
-"🐧 Everyone walks like penguins!",
+// =====================
+// Greeting
+// =====================
 
-"🤣 Tell your worst joke.",
+const greeting =
+document.getElementById("greeting");
 
-"🎵 Dance for 30 seconds!",
+const today =
+document.getElementById("today");
 
-"🦘 Hop across the room!",
 
-"📸 Take the silliest selfie!",
+const now = new Date();
 
-"⭐ Give someone a compliment."
+const hour = now.getHours();
 
-];
 
-function randomFun(){
+if(hour < 12){
 
-const random=
-Math.floor(Math.random()*funIdeas.length);
-
-document.getElementById("challenge").textContent=
-funIdeas[random];
-
-document.getElementById("frog").textContent="🤩🐸";
-
-document.getElementById("ribbitMessage").textContent=
-"🐸 THAT sounds awesome!";
+    greeting.textContent =
+    "☀️ Good Morning, Ashley";
 
 }
 
-function openSection(section){
+else if(hour < 17){
 
-if(section==="Team Wins"){
+    greeting.textContent =
+    "🌤️ Good Afternoon, Ashley";
 
-alert("🏆 Team Wins\n\nComing in Version 1.1!");
+}
+
+else if(hour < 21){
+
+    greeting.textContent =
+    "🌙 Good Evening, Ashley";
 
 }
 
 else{
 
-alert("🚧 "+section+"\n\nComing Soon!");
+    greeting.textContent =
+    "🏡 Welcome Home, Ashley";
 
 }
 
+
+today.textContent =
+now.toLocaleDateString(
+"en-US",
+{
+weekday:"long",
+month:"long",
+day:"numeric"
 }
+);
 
-const asterQuotes=[
 
-"⭐ Hi Ashley! Need a brainstorm?",
+// =====================
+// Spotlight
+// =====================
 
-"⭐ Family first.",
+const family = [
 
-"⭐ You're doing an amazing job.",
+"Ashley 💜",
 
-"⭐ Small steps build big dreams.",
+"Michael ❤️",
 
-"⭐ Ribbit says hello!",
+"Alec ⭐",
 
-"⭐ I'm here whenever you need ideas."
+"Jace 🦖",
+
+"Mama 🌸",
+
+"Yeh Yeh 🇭🇰"
 
 ];
 
-function setupAster(){
 
-const star=
-document.getElementById("asterButton");
+document.getElementById(
+"spotlight"
+).textContent =
 
-const windowBox=
-document.getElementById("asterWindow");
+family[
+Math.floor(Math.random()*family.length)
+];
 
-const close=
-document.getElementById("closeAster");
 
-star.addEventListener("click",function(){
+// =====================
+// Daily Spark
+// =====================
 
-windowBox.style.display="block";
+const sparks=[
 
-const quote=
-asterQuotes[Math.floor(Math.random()*asterQuotes.length)];
+"💜 Tell someone why you appreciate them.",
 
-windowBox.querySelector("p").textContent=quote;
+"🇭🇰 Learn one new Cantonese word.",
 
-});
+🥤 "Drink some water.",
 
-close.addEventListener("click",function(){
+"📸 Take a family picture.",
 
-windowBox.style.display="none";
+"😂 Make someone laugh.",
 
-});
+"🤗 Give someone a hug.",
+
+"🌸 Thank Mama today.",
+
+"🎵 Listen to a song together.",
+
+"⭐ Do something kind."
+
+];
+
+
+document.getElementById(
+"dailySpark"
+).textContent =
+
+sparks[
+Math.floor(Math.random()*sparks.length)
+];
+
+
+// =====================
+// Mission
+// =====================
+
+const missions=[
+
+"🍽️ Eat one meal together.",
+
+"🎲 Play a family game.",
+
+"🧹 Complete a chore together.",
+
+"📖 Read together.",
+
+🚶 "Take a walk together.",
+
+"💜 Say something nice to everyone."
+
+];
+
+
+document.getElementById(
+"mission"
+).textContent =
+
+missions[
+Math.floor(Math.random()*missions.length)
+];
+
+};
+
+
+// =====================
+// Ribbit
+// =====================
+
+const ribbitMessages=[
+
+"🐸 Welcome home, Team Cheung!",
+
+"🐸 Ribbit believes today is an adventure!",
+
+"🐸 Did someone smile today?",
+
+"🐸 Teamwork makes everything easier!",
+
+"🐸 Pizza Night sounds amazing!",
+
+"🐸 Every memory matters.",
+
+"🐸 Ribbit approves this mission!",
+
+"🐸 High five for Team Cheung!"
+
+];
+
+
+document.getElementById(
+"frog"
+).onclick=function(){
+
+
+const message =
+
+ribbitMessages[
+Math.floor(Math.random()*ribbitMessages.length)
+];
+
+
+document.getElementById(
+"ribbitMessage"
+).textContent =
+message;
+
+
+};
+
+
+// =====================
+// Random Fun
+// =====================
+
+const funIdeas=[
+
+"🐧 Penguin walk!",
+
+"🤣 Tell your funniest joke.",
+
+🎵 "Dance party for 30 seconds!",
+
+"📸 Silly family picture!",
+
+"🇭🇰 Learn a Cantonese word!",
+
+"⭐ Give someone a compliment."
+
+];
+
+
+function randomFun(){
+
+const idea =
+
+funIdeas[
+Math.floor(Math.random()*funIdeas.length)
+];
+
+
+document.getElementById(
+"challenge"
+).textContent =
+idea;
+
 
 }
+
+
+// =====================
+// Page Navigation
+// =====================
+
+function openSection(sectionName){
+
+alert(
+"🚧 "
++
+sectionName
++
+" is coming soon!"
+);
+
+}
+
+
+// =====================
+// ⭐ Aster
+// =====================
+
+
+const asterButton =
+document.getElementById(
+"asterButton"
+);
+
+
+const asterWindow =
+document.getElementById(
+"asterWindow"
+);
+
+
+asterButton.onclick=function(){
+
+asterWindow.style.display="block";
+
+};
+
+
+document.getElementById(
+"closeAster"
+).onclick=function(){
+
+asterWindow.style.display="none";
+
+};
